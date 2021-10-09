@@ -4,6 +4,7 @@ const app =express();
 const cors = require('cors');
 const router=require('./routes/routes');
 const bodyParser =require('body-parser')
+const authRouter = require('./routes/authRouter')
 const port=3000;
 
 app.use(bodyParser.urlencoded({
@@ -12,7 +13,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors());
 app.options('*', cors());
+app.use(express.json())
 app.use(router);
+app.use("/auth", authRouter)
 
 async function start() {
     try {

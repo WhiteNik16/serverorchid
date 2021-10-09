@@ -15,7 +15,8 @@ router.use(bodyParser.urlencoded({
 
     router.get('/',controllers.getcontroll);
 
-    router.post('/add',controllers.postcontroll);
+    router.post('/api/adduser',controllers.userAdd);
+    router.post('/api/addorchid', controllers.orchidAdd);
 
 
 
