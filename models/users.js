@@ -9,6 +9,22 @@ const User= new Schema({
     password:{
         type: String,
         required:true
+    },
+    name:{
+        type: String,
+        required:true
+    },
+    surname:{
+        type: String,
+        required:true
+    },
+    email:{
+        type: String,
+        required:true
+    },
+    male:{
+        type: String,
+        required:true
     }
 })
 module.exports = model('User',User)

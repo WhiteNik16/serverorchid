@@ -1,7 +1,7 @@
 const {Schema, model} = require("mongoose");
 
 
-const schema= new Schema({
+const orchids= new Schema({
     name:{
         type: String,
         required:true
@@ -10,6 +10,11 @@ const schema= new Schema({
         type: String,
         required:true
     },
+    article:{
+        type: String,
+        required: true,
+        unique: true,
+    }
 
 })
-module.exports = model('Orchid',schema)
+module.exports = model('Orchid',orchids)
