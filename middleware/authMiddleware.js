@@ -3,6 +3,7 @@ const {secret} = require('../config/secret')
 
 
 module.exports =function (req, res, next){
+    console.log(req.headers.authorization)
     if (req.method === "OPTIONS"){
         next()
     }

@@ -63,10 +63,20 @@ class authControllers{
 
     }
 
-    async getusers(req,res){
+    async userinfo(req,res){
+        const token=req.headers.authorization.split(' ')[1]
+        const decodedData = jwt.verify(token,secret)
+        req.user=decodedData
         try{
-            const users =await User.find()
-            res.status(200).send(users)
+
+
+
+            let id=req.user.id
+            console.log(id)
+            const user=await User.find({_id: id})
+
+
+            res.status(200).send(user)
 
         }
         catch (e){

@@ -5,7 +5,10 @@ const cors = require('cors');
 const router=require('./routes/routes');
 const bodyParser =require('body-parser')
 const authRouter = require('./routes/authRouter')
+const multer =require('multer')
 const port=3000;
+
+
 
 app.use(bodyParser.urlencoded({
     extended: false

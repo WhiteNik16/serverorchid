@@ -14,7 +14,17 @@ const orchids= new Schema({
         type: String,
         required: true,
         unique: true,
+    },
+    description:{
+      type:String
+    },
+    quantityFlo:{
+        type: String
+    },
+    image:{
+        type: String
     }
 
 })
 module.exports = model('Orchid',orchids)
+
