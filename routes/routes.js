@@ -23,6 +23,7 @@ router.use(bodyParser.urlencoded({
 }));
 
     router.get('/',orchidControllers.getcontroll);
+    router.post('/api/delete',orchidControllers.orchidDelete)
 
     router.get('/api/products',orchidControllers.orchidGet);
     router.post('/api/addorchid', orchidControllers.orchidAdd);

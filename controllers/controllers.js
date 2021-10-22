@@ -35,11 +35,23 @@ class orchidConntrolers {
 
      }
 
+     async orchidDelete(req, res){
+      try{
+           console.log(req.body)
+           let articledelete =req.body.article
+          await Orchid.deleteOne({article:articledelete})
+           res.status(200).send('Product delete')
+
+      }
+      catch (e){
+           console.log(e)
+           res.status(400).send(e)
+      }
+     }
+
      async orchidAdd(req, res) {
           try {
                console.log(req.body)
-               console.log(req.file.filename)
-               console.log(req.body.price)
                let filedata = req.file;
                console.log('Filedata',filedata)
                const orchid = new Orchid({
